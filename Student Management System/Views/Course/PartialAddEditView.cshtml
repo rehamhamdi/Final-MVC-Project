@@ -1,0 +1,21 @@
+﻿@model Course
+<div>
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form form-control">
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div>
+    <label asp-for="CreditsHours"></label>
+    <input asp-for="CreditsHours" class="form form-control">
+    <span asp-validation-for="CreditsHours" class="text-danger"></span>
+
+</div>
+<div>
+    <label asp-for="InstructorId"></label>
+    <select class="form form-control" asp-for="InstructorId" asp-items=@(new SelectList(ViewBag.insts, "Id", "Name"))></select>
+    <span asp-validation-for="InstructorId" class="text-danger"></span>
+
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+<a asp-action="Index" asp-controller="Course" class="btn btn-primary">Back</a>

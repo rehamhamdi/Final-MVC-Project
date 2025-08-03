@@ -62,11 +62,16 @@ namespace Student_Management_System.Migrations
                     b.Property<int>("CreditsHours")
                         .HasColumnType("int");
 
+                    b.Property<int>("InstructorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("InstructorId");
 
                     b.ToTable("courses");
                 });
@@ -202,6 +207,17 @@ namespace Student_Management_System.Migrations
                     b.Navigation("student");
                 });
 
+            modelBuilder.Entity("Student_Management_System.Models.Course", b =>
+                {
+                    b.HasOne("Student_Management_System.Models.Instructor", "Instructor")
+                        .WithMany("courses")
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Instructor");
+                });
+
             modelBuilder.Entity("Student_Management_System.Models.Enrollment", b =>
                 {
                     b.HasOne("Student_Management_System.Models.Course", "course")
@@ -257,6 +273,8 @@ namespace Student_Management_System.Migrations
 
             modelBuilder.Entity("Student_Management_System.Models.Instructor", b =>
                 {
+                    b.Navigation("courses");
+
                     b.Navigation("officeAssignments");
                 });
 

@@ -1,0 +1,10 @@
+﻿@model OfficeAssignment
+<div class="card" >
+    <div class="card-body">
+        <h5 class="card-title">Office Assignment Details</h5>
+        <p class="card-text">OfficeAssignment Id: @Model.Id</p>
+        <p class="card-text">OfficeAssignment location: @Model.Location</p>
+        <p class="card-text">Instructor: @Model.instructor?.Name</p>
+        <a asp-action="Index" asp-controller="OfficeAssignment" class="btn btn-primary">Back to all OfficeAssignments</a>
+    </div>
+</div>

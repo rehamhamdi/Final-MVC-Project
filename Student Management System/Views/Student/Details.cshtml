@@ -1,0 +1,10 @@
+﻿@model Student
+<div class="card" >
+    <div class="card-body">
+        <h5 class="card-title">Student Details</h5>
+        <p class="card-text">Name: @Model.Name</p>
+        <p class="card-text">Date Of Birth: @Model.DateOfBirth</p>
+        <p class="card-text">Depertment: @Model.department?.Name</p>
+        <a asp-action="Index" asp-controller="Student" class="btn btn-primary">Back to all Students</a>
+    </div>
+</div>

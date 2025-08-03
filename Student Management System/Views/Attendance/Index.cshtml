@@ -1,0 +1,39 @@
+﻿@model List<Attendance>
+
+<a asp-controller="Attendance" asp-action="AddNew" method="get" class="btn btn-primary">Click to Add New Attendance</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Student Id</th>
+            <th scope="col">Coursse Id</th>
+            <th scope="col">Date</th>
+            <th scope="col">Is Present?</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach(var a in Model)
+            {
+             <tr>
+                <td>@a.Id</td>
+                <td>@a.StudentId</td>
+                <td>@a.CourseId</td>
+                <td>@a.Date</td>
+                <td>@a.IsPresent</td>
+
+                <td>
+                    <a asp-action="Details" asp-controller="Attendance" asp-route-id=@a.Id class="btn btn-info">Details</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Attendance" asp-route-id=@a.Id class="btn btn-outline-info">Edit</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-controller="Attendance" asp-route-id=@a.Id class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Attendance?');">Delete</a>
+                </td>
+            </tr>
+            }    
+        </tr>
+    </tbody>
+</table>

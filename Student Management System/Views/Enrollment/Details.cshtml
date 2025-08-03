@@ -1,0 +1,12 @@
+﻿@model Enrollment
+<div class="card">
+    <div class="card-body" >
+        <h5 class="card-title">Enrollment Details</h5>
+        <p class="card-text">Enrollment Id: @Model.Id</p>
+        <p class="card-text">Student Name: @Model.student?.Name</p>
+        <p class="card-text">Course Name: @Model.course?.Name</p>
+        <p class="card-text">Grade: @Model.Grade</p>
+
+        <a asp-action="Index" asp-controller="Enrollment" class="btn btn-primary">Back to all Enrollments</a>
+    </div>
+</div>

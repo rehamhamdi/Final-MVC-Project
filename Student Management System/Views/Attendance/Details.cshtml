@@ -1,0 +1,14 @@
+﻿@model Attendance
+<div class="card">
+    <div class="card-body" >
+        <h5 class="card-title">Attendance Details</h5>
+        <p class="card-text">Attendance Id: @Model.Id</p>
+        <p class="card-text">Student Name: @Model.student?.Name</p>
+        <p class="card-text">Course Name: @Model.course?.Name</p>
+        <p class="card-text">Date: @Model.Date</p>
+        <p class="card-text">Is Present: @Model.IsPresent</p>
+
+
+        <a asp-action="Index" asp-controller="Attendance" class="btn btn-primary">Back to all Attendances</a>
+    </div>
+</div>

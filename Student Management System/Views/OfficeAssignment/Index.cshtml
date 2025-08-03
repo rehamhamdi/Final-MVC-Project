@@ -1,0 +1,33 @@
+﻿@model List<OfficeAssignment>
+<a asp-controller="OfficeAssignment" asp-action="AddNew" class="btn btn-primary">Click to Add New Office Assignment</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Location</th>
+            <th scope="col">Instructor Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach(var o in Model)
+            {
+             <tr>
+                <td>@o.Id</td>
+                <td>@o.Location</td>
+                <td>@o.InstructorId</td>
+                <td>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-controller="OfficeAssignment" asp-route-id=@o.Id class="btn btn-outline-info">Details</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="OfficeAssignment" asp-route-id=@o.Id class="btn btn-outline-info">Edit</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-controller="OfficeAssignment" asp-route-id=@o.Id class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this OfficeAssignment');">Delete</a>
+                </td>
+            </tr>
+            }    
+    </tbody>
+</table>

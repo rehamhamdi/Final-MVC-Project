@@ -1,0 +1,15 @@
+﻿@model OfficeAssignment
+<div>
+    <label asp-for="Location"></label>
+    <input asp-for="Location" class="form form-control">
+    <span asp-validation-for="Location" class="text-danger"></span>
+</div>
+<div>
+    <label asp-for="InstructorId"></label>
+    <select asp-for="InstructorId" asp-items=@(new SelectList(ViewBag.insts, "Id", "Name")) class="form form-control"></select>
+    <span asp-validation-for="InstructorId" class="text-danger"></span>
+
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+<a asp-action="Index" asp-controller="OfficeAssignment" class="btn btn-primary">Back</a>

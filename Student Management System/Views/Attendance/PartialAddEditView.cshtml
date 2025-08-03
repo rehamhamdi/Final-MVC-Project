@@ -1,0 +1,29 @@
+﻿@model Attendance
+
+<div>
+    <label asp-for="StudentId"></label>
+    <select asp-for="StudentId" asp-items=@(new SelectList(ViewBag.students, "Id", "Name")) class="form form-control"></select>
+    <span asp-validation-for="StudentId" class="text-danger"></span>
+
+</div>
+<div>
+    <label asp-for="CourseId"></label>
+    <select asp-for="CourseId" asp-items=@(new SelectList(ViewBag.courses, "Id", "Name")) class="form form-control"></select>
+    <span asp-validation-for="CourseId" class="text-danger"></span>
+
+</div>
+<div>
+    <label asp-for="Date"></label>
+    <input asp-for="Date" class="form form-control">
+    <span asp-validation-for="Date" class="text-danger"></span>
+
+</div>
+<div>
+    <label asp-for="IsPresent"></label>
+    <input asp-for="IsPresent" class="form-check">
+    <span asp-validation-for="IsPresent" class="text-danger"></span>
+
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+<a asp-action="Index" asp-controller="Attendance" class="btn btn-primary">Back</a>

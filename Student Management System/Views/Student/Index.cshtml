@@ -1,0 +1,32 @@
+﻿@model List<Student>
+<a asp-controller="Student" asp-action="AddNew"  class="btn btn-primary">Click to Add New student</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach(var s in Model)
+            {
+             <tr>
+                <td>@s.Id</td>
+                <td>@s.Name</td>
+                <td>@s.Email</td>
+                <td>
+                    <a asp-action="Details" asp-controller="Student" asp-route-id=@s.Id class="btn btn-info">Details</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Student" asp-route-id=@s.Id class="btn btn-outline-info">Edit</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-controller="Student" asp-route-id=@s.Id class="btn btn-danger" onclick="return confirm('Are you sure you want to delete Student @s.Name?');">Delete</a>
+                </td>
+            </tr>
+            }    
+        </tr>
+    </tbody>
+</table>
