@@ -1,3 +1,5 @@
+using Student_Management_System.Middlewares;
+
 namespace Student_Management_System
 {
     public class Program
@@ -16,17 +18,28 @@ namespace Student_Management_System
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            //Custom Middleware
+           // app.UseMiddleware<LogRequestMiddleware>();
+
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+            //app.UseAuthentication();
 
             app.MapStaticAssets();
+            //Convential Routing for Student/index
+            app.MapControllerRoute(
+              name: "route1",
+              pattern: "/AllStudents.com",
+              defaults: new { controller = "Student", action = "index"  })
+              .WithStaticAssets();
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
 
             app.Run();
+
         }
     }
 }

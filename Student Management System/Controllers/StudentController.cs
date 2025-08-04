@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Student_Management_System.Context;
+using Student_Management_System.Filters;
 using Student_Management_System.Models;
 
 namespace Student_Management_System.Controllers
@@ -13,6 +14,9 @@ namespace Student_Management_System.Controllers
             var student = db.students.ToList();
             return View(student);
         }
+        //Attribute Routing
+        [Route("s/getStudent.com/{id}")]
+        [LogActionFilter]
         public IActionResult Details(int id)
         {
             var s = db.students.Include(s=>s.department).FirstOrDefault(s=>s.Id==id);
@@ -58,6 +62,7 @@ namespace Student_Management_System.Controllers
         }
 
         //delete student
+       
         public IActionResult Delete(int id)
         {
             var s = db.students.Find(id);

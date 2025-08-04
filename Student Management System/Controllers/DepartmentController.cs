@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Student_Management_System.Context;
 using Student_Management_System.Models;
 
 namespace Student_Management_System.Controllers
 {
+    //[Authorize]
     public class DepartmentController : Controller
     {
         ProjectDBContext db = new ProjectDBContext();
