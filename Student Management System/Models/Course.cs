@@ -7,7 +7,7 @@ namespace Student_Management_System.Models
     public class Course
     {
         public int Id { get; set; }
-        [MinLength(3, ErrorMessage = "Name must at least 3 charcters")]
+        [MinLength(2, ErrorMessage = "Name must at least 2 charcters")]
         [Required(ErrorMessage = "This field is required")]
         [UniqueCourse]
         public string Name { get; set; }

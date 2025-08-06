@@ -23,7 +23,7 @@ namespace Student_Management_System
                 app.UseExceptionHandler("/Home/Error");
             }
             //Custom Middleware
-            app.UseMiddleware<LogRequestMiddleware>();
+            //app.UseMiddleware<LogRequestMiddleware>();
 
             app.UseRouting();
 
