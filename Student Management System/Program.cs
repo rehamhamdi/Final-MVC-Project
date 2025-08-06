@@ -27,9 +27,6 @@ namespace Student_Management_System
 
             app.UseRouting();
 
-            //app.UseAuthorization();
-            //app.UseAuthentication();
-
             app.MapStaticAssets();
             //Convential Routing for Student/index
             app.MapControllerRoute(
