@@ -16,7 +16,7 @@ namespace Student_Management_System.Controllers
         }
         //Attribute Routing
         [Route("s/getStudent.com/{id}")]
-        [LogActionFilter]
+       // [LogActionFilter]
         public IActionResult Details(int id)
         {
             var s = db.students.Include(s=>s.department).FirstOrDefault(s=>s.Id==id);
@@ -72,7 +72,7 @@ namespace Student_Management_System.Controllers
         }
         public IActionResult CheckDate(DateTime DateOfBirth)
         {
-            if (DateOfBirth.Year > 2010) return Json(false);
+            if (DateOfBirth.Year > 2015) return Json(false);
             return Json(true);
         }
 

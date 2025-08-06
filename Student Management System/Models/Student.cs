@@ -16,7 +16,7 @@ namespace Student_Management_System.Models
         [Required]
         public string? Email { get; set; }
         [Display(Name="Date Of Birth")]
-        [Remote("CheckDate","Student", ErrorMessage ="Year of DateOfBirth must be < 2010")]
+        [Remote("CheckDate","Student", ErrorMessage ="Year of DateOfBirth must be < 2015")]
         public DateTime DateOfBirth { get; set; }
 
         //Relationship between Stuent and Department
