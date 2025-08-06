@@ -2,16 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using Student_Management_System.Context;
 using Student_Management_System.Models;
+using Student_Management_System.Repositories;
 
 namespace Student_Management_System.Controllers
 {
     //[Authorize]
     public class DepartmentController : Controller
     {
-        ProjectDBContext db = new ProjectDBContext();
+        DepartmentRepository repo ;
+        public DepartmentController(DepartmentRepository _repo)
+        {
+            repo= _repo;
+        }
         public IActionResult Index()
         {
-            var c = db.departments.ToList();
+            var c = repo.ReadAll();
             return View(c);
         }
         //Add new Department
@@ -23,8 +28,8 @@ namespace Student_Management_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.departments.Add(d);
-                db.SaveChanges();
+                repo.Create(d);
+                repo.save();
                 return RedirectToAction("Index");
             }
             return View("AddNew",d);
@@ -33,7 +38,7 @@ namespace Student_Management_System.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var d = db.departments.Find(id);
+            var d = repo.ReadById(id);
             return View(d);
         }
         [HttpPost]
@@ -41,8 +46,8 @@ namespace Student_Management_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.departments.Update(d);
-                db.SaveChanges();
+                repo.Update(d);
+                repo.save();
                 return RedirectToAction("Index");
             }
             return View("Edit" ,d);
@@ -51,9 +56,9 @@ namespace Student_Management_System.Controllers
         //delete department
         public IActionResult Delete(int id)
         {
-            var d = db.departments.Find(id);
-            db.departments.Remove(d);
-            db.SaveChanges();
+            var d = repo.ReadById(id);
+            repo.Delete(d);
+            repo.save();
             return RedirectToAction("Index");
         }
     }

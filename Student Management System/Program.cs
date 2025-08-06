@@ -1,4 +1,6 @@
 using Student_Management_System.Middlewares;
+using Student_Management_System.Models;
+using Student_Management_System.Repositories;
 
 namespace Student_Management_System
 {
@@ -10,7 +12,9 @@ namespace Student_Management_System
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            //Register Repositories to Dependency Injection
+            builder.Services.AddScoped<DepartmentRepository>();
+            builder.Services.AddScoped<InstructorRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -37,7 +41,6 @@ namespace Student_Management_System
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
-
             app.Run();
 
         }
