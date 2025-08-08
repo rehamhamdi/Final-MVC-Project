@@ -58,7 +58,7 @@ It provides complete **CRUD operations** for managing students, courses, departm
 - Relationships between entities (**One-to-Many**, **Many-to-Many**)  
 
 ---
- #How to Run the Project
+ # How to Run the Project
 - 1️⃣ Clone the repository
     git clone https://github.com/rehamhamdi/Final-MVC-Project.git
 - 2️⃣ Open in Visual Studio
