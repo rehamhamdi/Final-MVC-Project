@@ -7,7 +7,7 @@ It provides complete **CRUD operations** for managing students, courses, departm
 
 ---
 
-## 🚀 Technologies & Tools Used
+##  Technologies & Tools Used
 
 - **ASP.NET Core MVC** – For building the web application architecture  
 - **Entity Framework Core** – ORM for database operations  
@@ -59,4 +59,7 @@ It provides complete **CRUD operations** for managing students, courses, departm
 
 ---
 
-tructure
+## License
+This project was developed for educational purposes as part of ITI Summer Training and is free to use for learning.
+
+
