@@ -24,13 +24,13 @@ It provides complete **CRUD operations** for managing students, courses, departm
 
 ---
 
-## 📌 Features
+##  Features
 
 ### ✅ User Authentication & Authorization
 - Register, login, and logout functionality using **ASP.NET Identity**
 - Role-based access control with `[Authorize]` attribute
 
-### ✅ CRUD Operations for All Entities
+###  CRUD Operations for All Entities
 - Students  
 - Courses  
 - Departments  
@@ -39,7 +39,7 @@ It provides complete **CRUD operations** for managing students, courses, departm
 - Enrollments  
 - Attendance  
 
-### ✅ Custom Features
+###  Custom Features
 - Unique field validation for students, departments, instructors, and courses  
 - Date validation (e.g., DOB before 2010, no future hire dates)  
 - Custom middleware to log all incoming requests  
@@ -48,12 +48,12 @@ It provides complete **CRUD operations** for managing students, courses, departm
 - Bootstrap layout for consistent and responsive UI  
 - Partial Views for shared forms (Add/Edit)  
 
-### ✅ Routing
+###  Routing
 - **Attribute Routing** for specific actions  
 - **Conventional Routing** for default actions  
 - Custom route example: `/AllStudents.com`  
 
-### ✅ Database
+###  Database
 - Managed via **Entity Framework Core**  
 - Relationships between entities (**One-to-Many**, **Many-to-Many**)  
 
