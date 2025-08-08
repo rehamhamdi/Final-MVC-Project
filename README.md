@@ -59,18 +59,18 @@ It provides complete **CRUD operations** for managing students, courses, departm
 
 ---
  #How to Run the Project
--1️⃣ Clone the repository
+- 1️⃣ Clone the repository
     git clone https://github.com/rehamhamdi/Final-MVC-Project.git
--2️⃣ Open in Visual Studio
+- 2️⃣ Open in Visual Studio
     Open the .sln file in Visual Studio.
 
--3️⃣ Update the database connection
+- 3️⃣ Update the database connection
    Edit the connection string in ProjectDBContext.cs to match your SQL Server settings.
    
--4️⃣ Run migrations and update the database
+- 4️⃣ Run migrations and update the database
     Add-Migration InitialCreate
     Update-Database
--5️⃣ Run the application
+- 5️⃣ Run the application
     Press F5 in Visual Studio to start the project.
 ---
 ## License
