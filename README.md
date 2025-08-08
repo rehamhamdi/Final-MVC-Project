@@ -26,7 +26,7 @@ It provides complete **CRUD operations** for managing students, courses, departm
 
 ##  Features
 
-### ✅ User Authentication & Authorization
+###  User Authentication & Authorization
 - Register, login, and logout functionality using **ASP.NET Identity**
 - Role-based access control with `[Authorize]` attribute
 
