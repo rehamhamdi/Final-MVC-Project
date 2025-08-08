@@ -6,6 +6,7 @@ using Student_Management_System.Repositories;
 
 namespace Student_Management_System.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         DepartmentRepository repo ;

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Logout Confirmation";
+}
+
+<div style="display:flex; justify-content:center; align-items:center; height:30vh; ">
+    <div style="background-color:#1e1e1e; padding:30px; border-radius:15px; width:550px; text-align:center; color:white; box-shadow:0 0 20px rgba(0,0,0,0.3);">
+        <h3 style="margin-bottom:15px; color:white">Are you sure you want to log out ?</h3>
+
+        <form asp-action="Signout" method="post" style="margin-bottom:10px;">
+            <button type="submit" style="width:100%; padding:10px; background-color:#3b3b3b; border:none; border-radius:8px; color:white; font-size:16px; cursor:pointer;">
+                Log out
+            </button>
+        </form>
+
+        <form asp-action="CancelLogout" method="get">
+            <button type="submit" style="width:100%; padding:10px; background-color:transparent; border:1px solid #555; border-radius:8px; color:white; font-size:16px; cursor:pointer;">
+                Cancel
+            </button>
+        </form>
+    </div>
+</div>
+

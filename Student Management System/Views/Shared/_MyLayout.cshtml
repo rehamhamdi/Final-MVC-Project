@@ -30,23 +30,34 @@
             <div class="col-12">
                 <nav class="main-nav">
                  <!-- ***** Serach Start ***** -->
-                    <div class="search-input">
+                    @* <div class="search-input">
                       <form id="search" action="#">
                         <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
                         <i class="fa fa-search"></i>
                       </form>
-                    </div>
+                    </div> *@
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a asp-controller="Home" asp-action="index" class="active">Home</a></li>
-                      <li class="scroll-to-section"><a asp-controller="Student" asp-action="index">Students</a></li>
+                            <li class="scroll-to-section"><a asp-controller="Student" asp-action="index">Students</a></li>
                             <li class="scroll-to-section"><a asp-controller="Course" asp-action="index">Courses</a></li>
-                            <li class="scroll-to-section"><a a asp-controller="Department" asp-action="index">Departments</a></li>
-                            <li class="scroll-to-section"><a asp-controller="Enrollment" asp-action="index">Enrollments</a></li>
+                            <li class="scroll-to-section"><a asp-controller="Department" asp-action="index">Departments</a></li>
+                            @* <li class="scroll-to-section"><a asp-controller="Enrollment" asp-action="index">Enrollments</a></li> *@
                             <li class="scroll-to-section"><a asp-controller="Instructor" asp-action="index">Instructors</a></li>
                             <li class="scroll-to-section"><a asp-controller="OfficeAssignment" asp-action="index">OfficeAssignments</a></li>
                             <li class="scroll-to-section"><a asp-controller="Attendance" asp-action="index">Attendances</a></li>
+                            @if(User.Identity.IsAuthenticated)
+                            {
+                                <li class="scroll-to-section"><a asp-controller="Account" asp-action="signout">Log Out</a></li>
+                            }
+                            else
+                            {
+
+                                <li class="scroll-to-section"><a asp-controller="Account" asp-action="Register">Sign Up</a></li>
+                                <li class="scroll-to-section"><a asp-controller="Account" asp-action="Login">Log In</a></li>
+                            }
+
                         </ul>
                         <a class='menu-trigger'>
                         <span>Menu</span>
@@ -124,7 +135,6 @@
           <div class="section-heading">
             <h6>Contact Us</h6>
             <h2>Feel free to contact us anytime</h2>
-            <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
             <div class="special-offer">
               <span class="offer">off<br><em>50%</em></span>
               <h6>Valide: <em>24 April 2036</em></h6>

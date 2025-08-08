@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Identity;
+using Student_Management_System.Context;
 using Student_Management_System.Middlewares;
 using Student_Management_System.Models;
 using Student_Management_System.Repositories;
@@ -15,6 +17,12 @@ namespace Student_Management_System
             //Register Repositories to Dependency Injection
             builder.Services.AddScoped<DepartmentRepository>();
             builder.Services.AddScoped<InstructorRepository>();
+            builder.Services.AddDbContext<ProjectDBContext>();
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
+                options.Password.RequiredLength = 5;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                }).AddEntityFrameworkStores<ProjectDBContext>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -23,9 +31,11 @@ namespace Student_Management_System
                 app.UseExceptionHandler("/Home/Error");
             }
             //Custom Middleware
-            app.UseMiddleware<LogRequestMiddleware>();
-
+            //app.UseMiddleware<LogRequestMiddleware>();
+           
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapStaticAssets();
             //Convential Routing for Student/index
@@ -36,7 +46,7 @@ namespace Student_Management_System
               .WithStaticAssets();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
+                pattern: "{controller=Home}/{action=index}/{id?}")
                 .WithStaticAssets();
             app.Run();
 

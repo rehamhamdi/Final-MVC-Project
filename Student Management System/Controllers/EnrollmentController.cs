@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Student_Management_System.Context;
 using Student_Management_System.Models;
 
 namespace Student_Management_System.Controllers
 {
+    [Authorize]
     public class EnrollmentController : Controller
     {
         ProjectDBContext db = new ProjectDBContext();
