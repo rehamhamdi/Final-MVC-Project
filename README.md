@@ -1,4 +1,4 @@
-# 🎓 Student Management System – ITI Summer Training Project
+#  Student Management System 
 
 This project is a **full-stack web application** built using **ASP.NET Core MVC** with **Entity Framework Core** for database management.  
 It was developed during my **ITI Summer Training** as my graduation project in the **.NET Web Development** track.
